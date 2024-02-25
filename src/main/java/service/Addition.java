@@ -1,14 +1,20 @@
 package service;
 
-import model.ComplexNumber;
+import model.Calculator;
+import model.Result;
+
+import java.util.List;
 
 public class Addition {
     private Loggable loggable = new ConsoleLogger();
-    public ComplexNumber addition(ComplexNumber num1, ComplexNumber num2){
+    private Calculator calculator =  new Calculator();
+
+    public Result addition(double num1, double num2) {
         loggable.log(" Операция сложения");
-        ComplexNumber complexNumber = new ComplexNumber(num2.getImaginary() +
-                num1.getImaginary(),
-                num1.getValid() + num2.getValid());
-        return complexNumber;
+        Result result = new Result();
+        result.setResult(calculator.sum(num1,num2));
+        return result;
+
+
     }
 }

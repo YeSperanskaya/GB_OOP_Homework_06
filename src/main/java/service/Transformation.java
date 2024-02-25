@@ -3,13 +3,13 @@ package service;
 import model.Calculator;
 import model.Result;
 
-public class Division {
+public class Transformation {
     private Loggable loggable = new ConsoleLogger();
     private Calculator calculator =  new Calculator();
-    public Result division(double num1, double num2) {
-        loggable.log(" Операция деления");
+    public Result binaryTransform(String str) {
+        loggable.log(" Перевод в бинарную систему:");
         Result result = new Result();
-        result.setResult(calculator.division(num1,num2));
+        result.setResultBinary(calculator.toBinaryString(str));
         return result;
     }
 }

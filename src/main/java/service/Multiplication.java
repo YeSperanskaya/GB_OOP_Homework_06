@@ -1,16 +1,18 @@
 package service;
 
-import model.ComplexNumber;
+import model.Calculator;
+import model.Result;
 
 public class Multiplication {
     private Loggable loggable = new ConsoleLogger();
-    public ComplexNumber multiplication(ComplexNumber num1, ComplexNumber num2){
+    private Calculator calculator =  new Calculator();
+    public Result multiplication(double num1, double num2) {
         loggable.log(" Операция умножения");
-        ComplexNumber complexNumber = new ComplexNumber(
-                num1.getValid() * num2.getImaginary() +
-                        num1.getImaginary() * num2.getValid(),
-                num1.getValid() * num2.getValid() -
-                        num1.getImaginary() * num2.getImaginary());
-        return complexNumber;
+        Result result = new Result();
+        result.setResult(calculator.multiplication(num1,num2));
+        return result;
+
+
     }
 }
+

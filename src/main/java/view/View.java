@@ -1,14 +1,15 @@
 package view;
 
-import model.ComplexNumber;
+import model.Result;
 
 public class View {
-    public void printComplexNumber(ComplexNumber complexNumber){
-        if (complexNumber.getImaginary() < 0){
-            System.out.println(complexNumber.getValid() + " " + complexNumber.getImaginary() + " * i");
-        } else {
-            System.out.println(complexNumber.getValid() + " + " + complexNumber.getImaginary() + " * i");
-        }
+
+    public void printResult(Result result){
+        System.out.println(result.getResult());
+
+    }
+    public void printBinaryResult(Result result){
+        System.out.println(result.getResultBinary());
 
     }
 }
